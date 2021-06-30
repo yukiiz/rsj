@@ -1,0 +1,113 @@
+.sec-paging {
+	.paging {
+		&-list {
+			display: flex;
+			justify-content: space-between;
+			margin: 0 auto 80px;
+			width: 100%;
+		}
+		&-item {
+			a {
+				border: 1px solid $fc;
+				border-radius: 50px;
+				color: $fc;
+				display: block;
+				padding: 10px;
+				transition: all 0.3s;
+				width: 160px;
+				@include maxsp {
+					width: 150px;
+				}
+				&:hover {
+					background: $fc;
+					color: white;
+				}
+			}
+			&_prev {
+			}
+			&_archive {
+				margin-bottom: 100px;
+				a {
+					color: $fc;
+					display: block;
+					position: relative;
+					text-align: right;
+					@include maxsp {
+						margin-right: 25px;
+					}
+					&::after {
+						font-family: "Font Awesome 5 Free";
+						font-weight: 900;
+						content: "\f061";
+						position: absolute;
+						right: -1.2em;
+						top: 50%;
+						transition: all 0.2s;
+						transform: translatey(-50%);
+					}
+					&:hover {
+						color: $sc;
+						&::after {
+							color: $sc;
+							right: -1.5em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*wp-pagenavi base*/
+.page-navi {
+	margin: 20px 0 160px;
+	@include maxsp {
+		margin-bottom: 80px;
+	}
+	.wp-pagenavi {
+		clear: both;
+		text-align: center;
+		a,
+		span {
+			background-color: $sc;
+			border: 1px solid $sc;
+			border-radius: 0;
+			border-color: $sc;
+			margin: 0 5px;
+			padding: 6px 15px;
+			text-align: center;
+			text-decoration: none;
+			white-space: nowrap;
+			@include fs(20);
+		}
+		a:hover {
+			background-color: white;
+			color: $sc;
+		}
+		span.current {
+			background-color: white;
+			border-color: $sc;
+			color: $sc;
+			font-weight: bold;
+		}
+		@include maxsp {
+			.first,
+			.last,
+			.extend {
+				display: none;
+			}
+		}
+	}
+}
+
+/*breadcrumbs base*/
+.breadcrumbs {
+	margin-bottom: 5%;
+	margin-left: 5%;
+	@include maxsp {
+		margin-bottom: 10%;
+		span {
+			@include fs(12);
+		}
+	}
+}

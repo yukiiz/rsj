@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/*=====全体の設定=====*/
+body {
+	-webkit-text-size-adjust: 100%;
+	font-family: $base_font;
+	font-weight: 500;
+	color: $fc;
+	line-height: 1.5;
+	@include fs(15);
+	@media all and (-ms-high-contrast: none) {
+		font-family: $base_font;
+	}
+}
+body.fix {
+	position: fixed;
+	/*指定しておかないとなんか右側が空く*/
+	width: 100%;
+}
+html,
+body {
+	/* 左右にスクロールが発生しないよう措置 */
+	overflow-x: hidden;
+	width: 100%;
+}
+.sec-inner {
+	margin: 0 auto;
+	max-width: 1040px;
+	width: 98%;
+	@include maxtb {
+		width: 90%;
+	}
+}
+.sec-inner_l {
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 98%;
+	@include maxtb {
+		width: 90%;
+	}
+}
+main {
+	@include minpc {
+	}
+}
+/*=====フォントサイズの設定=====*/
+h1 {
+	@include fs(44);
+	@include maxtb {
+		@include fs(32);
+	}
+}
+h2 {
+	@include fs(20);
+	@include maxtb {
+		@include fs(17);
+	}
+}
+h3 {
+	@include fs(18);
+	@include maxtb {
+		@include fs(15);
+	}
+}
+p,
+li {
+	@include fs(16);
+	@include maxtb {
+		@include fs(15);
+	}
+}
+/*=====その他設定=====*/
+span {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+ul,
+li {
+	list-style: none;
+}
+textarea,
+input,
+select {
+	box-sizing: border-box;
+	font-family: $base_font;
+	-webkit-appearance: none;
+}
+input[type="submit"],
+input[type="button"] {
+	appearance: button;
+	border-radius: 0;
+	border: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: content-box;
+	-webkit-appearance: button;
+	&::-webkit-search-decoration {
+		display: none;
+	}
+	&::focus {
+		outline-offset: -2px;
+	}
+}
+a {
+	background: transparent;
+	box-sizing: border-box;
+	color: $fc;
+	font-size: 100%;
+	margin: 0;
+	outline: none;
+	padding: 0;
+	text-decoration: none;
+	transition: color 0.5s ease, opacity 0.5s ease, background 0.5s ease;
+	vertical-align: baseline;
+	@include maxtb {
+		@include fs(15);
+	}
+}
+a:hover {
+	text-decoration: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+hr {
+	display: block;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	height: 1px;
+	margin: 1em 0;
+	padding: 0;
+}
+input,
+select {
+	vertical-align: middle;
+}
+img {
+	vertical-align: bottom;
+}
+sup {
+	position: relative;
+	top: -1ex;
+	vertical-align: baseline;
+}
+button {
+	outline: none;
+}
+.center {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+.text-center {
+	text-align: center;
+}
+.m100 {
+	margin: 100px auto;
+	@include maxsp {
+		margin: 50px auto;
+	}
+}
+.sp-none {
+	@include maxsp {
+		display: none !important;
+	}
+}
+.tb-none {
+	@include maxtb {
+		display: none !important;
+	}
+}
+.tbpc-none {
+	@include mintb {
+		display: none !important;
+	}
+}
+.pc-none {
+	display: none !important;
+	@include maxtb {
+		display: block !important;
+	}
+}
+.right {
+	text-align: right;
+}
+.bold {
+	font-weight: bold;
+}
+.color {
+	color: $sc !important;
+}
+.en {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 900;
+}
+.ggmap {
+	height: 0;
+	margin: 45px auto;
+	max-width: 1090px;
+	overflow: hidden;
+	padding-top: 30px;
+	padding-bottom: 17%;
+	position: relative;
+	width: 90%;
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	@include maxsp {
+		height: 200px;
+	}
+}

@@ -1,0 +1,150 @@
+.sec {
+	&-header {
+		position: relative;
+	}
+	&-tit {
+		color: white;
+		letter-spacing: 5px;
+		padding-top: 113px;
+		@include maxsp {
+			letter-spacing: 2px;
+			padding-top: 90px;
+			padding-left: 40px;
+		}
+		&_bg {
+			@include fs(149);
+			color: rgba(255, 255, 255, 0.06);
+			display: inline-block;
+			left: 0;
+			position: absolute;
+			top: 50px;
+			white-space: nowrap;
+			@include maxsp {
+				left: -30px;
+				@include fs(115);
+			}
+		}
+		&_sub {
+			display: inline-block;
+			padding-bottom: 75px;
+			width: 49%;
+			@include maxsp {
+				padding-left: 40px;
+				padding-bottom: 30px;
+			}
+		}
+	}
+	&-more {
+		display: inline-block;
+		text-align: right;
+		width: 50%;
+		@include maxsp {
+			text-align: center;
+			width: 100%;
+		}
+		a {
+			background: white;
+			border-radius: 30px;
+			border: 1px solid;
+			display: inline-block;
+			padding: 10px 35px;
+			@include maxsp {
+				padding: 6px 60px;
+			}
+		}
+	}
+}
+
+.sec-column,
+.sec-news {
+	.sec-tit_bg {
+		color: rgba(255, 122, 74, 0.06);
+	}
+}
+.sec-about {
+	.sec-tit_bg {
+		bottom: -50px;
+		top: auto;
+	}
+}
+.sec-voice {
+	.sec-tit {
+		margin-bottom: 2px;
+		padding-top: 80px;
+	}
+	.sec-tit_sub {
+		color: white;
+	}
+}
+.sec-column {
+	.sec-header {
+		padding-top: 120px;
+		@include maxsp {
+			padding-top: 20px;
+		}
+	}
+	.sec-tit_bg {
+		top: 160px;
+		@include maxsp {
+			left: -12px;
+			top: 72px;
+		}
+	}
+	.sec-tit_sub {
+		@include maxsp {
+			padding-bottom: 0;
+		}
+	}
+}
+.sec-news {
+	.sec-tit {
+		padding-top: 120px;
+		@include maxsp {
+			padding-top: 70px;
+			padding-bottom: 7px;
+		}
+		&_sub {
+			padding-bottom: 45px;
+		}
+	}
+	.sec-more a {
+		padding: 10px 45px;
+	}
+}
+.layer-page {
+	.sec {
+		&-header {
+			max-width: 1040px;
+		}
+		&-tit_bg {
+			padding-top: 115px;
+		}
+		&-tit {
+			padding-top: 230px;
+			@include fs(64);
+			@include maxsp {
+				padding-top: 240px;
+				padding-left: 20px;
+				@include fs(32);
+			}
+		}
+		&-tit_bg {
+			@include fs(174);
+			@include maxsp {
+				left: 0;
+				padding-top: 150px;
+				@include fs(80);
+			}
+		}
+		&-tit_sub {
+			color: white;
+			@include fs(24);
+			@include maxsp {
+				padding-bottom: 40px;
+				padding-left: 20px;
+				width: 100%;
+				@include fs(16);
+			}
+		}
+	}
+}

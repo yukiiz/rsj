@@ -1,0 +1,98 @@
+.cards {
+	&-inner {
+		align-items: normal;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 1040px;
+		@include maxtb {
+			width: 90%;
+		}
+	}
+	&_card {
+		background-color: $sc_box;
+		border-radius: 3px;
+		margin-bottom: 80px;
+		overflow: hidden;
+		position: relative;
+		width: calc((100% - 80px) / 2);
+		@include maxtb {
+			margin-bottom: 40px;
+			width: calc((100% - 40px) / 2);
+		}
+		@include maxsp {
+			width: 100%;
+		}
+	}
+	.card {
+		&-pic {
+			border-radius: 50%;
+			height: 92px;
+			margin: 20px auto 0;
+			overflow: hidden;
+			width: 92px;
+			img {
+				width: 100%;
+			}
+		}
+		&-details {
+			display: flex;
+			font-size: 0.8em;
+			position: relative;
+			&::before {
+				border: 10px solid transparent;
+				border-top: 15px solid $sc;
+				content: "";
+				left: 50%;
+				position: absolute;
+				top: 100%;
+				transform: translatex(-50%);
+			}
+		}
+		&-description {
+			padding: 37px 2em 50px;
+			@include maxsp {
+				padding: 20px 2em 15px;
+			}
+		}
+		&-tit {
+			background-color: $sc;
+			color: white;
+			padding: 20px;
+			@include fs(16);
+		}
+	}
+	.desc {
+		&-money {
+			margin-bottom: 15px;
+		}
+		&-txt {
+			line-height: 26px;
+			p {
+				line-height: 2;
+			}
+		}
+	}
+}
+.voice-page {
+	.cards {
+		.card-description {
+			padding: 12px 3em 22px;
+			@include maxsp {
+				padding: 12px 1em 22px;
+			}
+		}
+		p.desc-comment {
+			line-height: 2.3;
+		}
+		&-inner {
+			margin: 0 auto 35px;
+		}
+		.card-tit {
+			@include maxsp {
+				padding: 5px;
+			}
+		}
+	}
+}

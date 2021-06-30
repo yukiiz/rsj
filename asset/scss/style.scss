@@ -1,0 +1,34 @@
+@charset "utf-8";
+// ================
+// import
+// ================
+
+//設定用
+@import "./setting/setting";
+
+//mixin
+@import "./mixin/font";
+@import "./mixin/mq";
+
+//リセットCSS
+@import "./base/reset";
+@import "./base/base";
+
+//module
+@import "./module/header";
+@import "./module/footer";
+@import "./module/sec-header";
+@import "./module/news";
+@import "./module/boxs";
+@import "./module/more-btn";
+@import "./module/banner";
+@import "./module/card";
+@import "./module/page-navi";
+@import "./module/sitemap";
+
+//pulgins
+
+//page
+@import "./page/toppage";
+@import "./page/layerpage";
+@import "./page/newspage";

@@ -1,0 +1,85 @@
+.more-btn {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	@include fs(15);
+	&::after {
+		content: "\f061";
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		position: absolute;
+		right: 0.5em;
+		top: 50%;
+		transition: all 0.2s;
+		transform: translatey(-50%);
+	}
+	&:hover::after {
+		right: 0.3em;
+	}
+}
+.sec-strengths {
+	.sec-more {
+		a {
+			padding: 10px 45px;
+			&:hover {
+				background: $fc;
+				color: white;
+			}
+		}
+	}
+}
+.top-page {
+	.sec-column {
+		.sec-more {
+			@include maxsp {
+				margin-bottom: 80px;
+				a {
+					padding: 6px 45px;
+				}
+			}
+		}
+		.sec-header {
+			.more-btn {
+				&:hover {
+					background: $fc;
+					color: white;
+				}
+			}
+		}
+		.box-more {
+			a {
+				@include maxsp {
+					@include fs(10);
+				}
+			}
+
+			.more-btn {
+				&::after {
+					right: -1em;
+				}
+				&:hover::after {
+					right: -1.2em;
+				}
+			}
+		}
+	}
+	.sec-link {
+		.more {
+			&:hover {
+				background: $fc;
+				a {
+					color: white;
+				}
+			}
+		}
+	}
+	.sec-news {
+		.more-btn {
+			&:hover {
+				background: $fc;
+				color: white;
+			}
+		}
+	}
+}

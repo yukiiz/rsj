@@ -1,0 +1,148 @@
+.footer {
+	background: $fc;
+	&-inner {
+		display: flex;
+		font-weight: 700;
+		justify-content: space-between;
+		max-width: 1040px;
+		margin: 0 auto;
+		padding-top: 80px;
+		padding-bottom: 60px;
+		position: relative;
+		@include maxtb {
+			margin: 20px 10px;
+		}
+		@include maxsp {
+			height: 250px;
+		}
+	}
+	&-logo {
+		padding-top: 20px;
+		width: 20%;
+		@include maxsp {
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 50%;
+		}
+		img {
+			display: block;
+			margin: 0 auto;
+			@include maxtb {
+				width: 100%;
+			}
+		}
+	}
+	&-copy {
+		background-color: #272b2f;
+		color: white;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		@include fs(13.5);
+		@include maxtb {
+			padding-right: 15px;
+		}
+		@include maxsp {
+			font-size: 0.6875rem;
+			height: 40px;
+			line-height: 40px;
+			padding-top: 0;
+			text-align: center;
+		}
+	}
+}
+.fnav {
+	&-inner {
+		display: flex;
+	}
+	&-list {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0;
+		@include maxsp {
+			flex-direction: column;
+			padding: 5px 0 32px;
+		}
+	}
+	&-item {
+		height: 40px;
+		margin-bottom: 15px;
+		padding: 5px 44px;
+		position: relative;
+		&:last-child {
+			padding-right: 0;
+		}
+		@include maxtb {
+			padding: 5px 10px;
+		}
+		@include maxsp {
+			align-items: center;
+			border-bottom: 1px solid #3e3a39;
+			border-right: none;
+			display: flex;
+			height: 52px;
+			padding: 12px;
+		}
+		& > a {
+			color: white;
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			position: relative;
+			z-index: 2;
+			@include fs(15);
+			@include maxsp {
+				@include fs(13);
+			}
+			&:hover,
+			&.current {
+				color: $sc;
+				opacity: 1;
+				&::before {
+					width: 100%;
+				}
+			}
+		}
+		&_sub {
+			margin-left: 30px;
+			margin-bottom: 0;
+			position: relative;
+			a {
+				@include fs(13);
+			}
+			&::before {
+				border: 7px solid transparent;
+				border-top-width: 5px;
+				border-bottom-width: 5px;
+				border-left-color: #fff;
+				content: "";
+				left: 30px;
+				margin-top: -5px;
+				position: absolute;
+				top: 50%;
+				transition: all 0.2s;
+			}
+		}
+		&_btn {
+			a {
+				background: white;
+				border-radius: 5px;
+				border: 1px solid white;
+				color: $fc;
+				margin-bottom: 35px;
+				padding: 0 15px;
+				width: 200px;
+				@include fs(13);
+				i {
+					margin-right: 3px;
+				}
+				&:hover {
+					background: $fc;
+					color: white;
+				}
+			}
+		}
+	}
+}

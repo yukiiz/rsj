@@ -1,0 +1,49 @@
+//sec-banner
+.banner {
+	&-list {
+		bottom: 0;
+		position: fixed;
+		z-index: 20;
+		@include maxsp {
+			align-items: center;
+			background: rgba(0, 0, 0, 0.5);
+			display: flex;
+			justify-content: space-around;
+			height: 72px;
+			width: 100vw;
+		}
+	}
+	&-btn {
+		border-radius: 10px 0 0 10px;
+		color: white;
+		display: block;
+		height: 200px;
+		line-height: 70px;
+		position: fixed;
+		right: -10px;
+		text-align: center;
+		transition: all 0.2s;
+		width: 60px;
+		writing-mode: vertical-rl;
+		z-index: 1000;
+		@include maxsp {
+			border-radius: 25px;
+			display: inline-block;
+			height: 42px;
+			line-height: 42px;
+			position: initial;
+			width: 162px;
+			writing-mode: initial;
+			@include fs(11);
+		}
+	}
+	&-btn_phone {
+		background: #f4bc00;
+		bottom: 290px;
+	}
+	&-btn_mail {
+		background: #0567ef;
+		bottom: 80px;
+		margin-top: 5px;
+	}
+}

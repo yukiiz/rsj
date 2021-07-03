@@ -187,8 +187,7 @@ $(function () {
 	    ytPlayer = new YT.Player('js-mv-player', {
 	        height: '360',
 	        width: '640',
-	        // videoId: 'LSAwgKI_Ymw',
-	        videoId: 'rrv4s5EQy7E',
+	        videoId: '【動画ID】',
 	        events: {
 	            'onReady': onPlayerReady,
 	        	'onStateChange': onPlayerStateChange,

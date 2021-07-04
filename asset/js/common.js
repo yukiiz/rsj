@@ -187,7 +187,7 @@ $(function () {
 	    ytPlayer = new YT.Player('js-mv-player', {
 	        height: '360',
 	        width: '640',
-	        videoId: '【動画ID】',
+			videoId: '6RLG82XWXqw',
 	        events: {
 	            'onReady': onPlayerReady,
 	        	'onStateChange': onPlayerStateChange,
@@ -207,7 +207,7 @@ $(function () {
 	}
 	function onPlayerStateChange(event) {
 		if (event.data == YT.PlayerState.ENDED) {
-			$('.mv-movie').fadeOut(function();
+			$('.mv-movie').fadeOut();
 		}
 	}
 	function onPlayerError() {
@@ -221,7 +221,7 @@ $(function () {
 function loadScript() {
 	if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
 		var tag = document.createElement('script');
-		tag.src = "//www.youtube.com/iframe_api";
+		tag.src = "https://www.youtube.com/iframe_api";
 		var firstScriptTag = document.getElementsByTagName('script')[0];
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 	}

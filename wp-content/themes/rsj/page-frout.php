@@ -23,6 +23,11 @@ Template Name: トップページ
 					</div>
 				</div>
 			</div>
+			<div class="mv-movie">
+			    <div class="mv-movie-inner">
+			        <div id="js-mv-player"></div>
+			    </div>
+			</div>
 		</section>
 		<section class="sec-banner banner">
 			<div class="banner-list js-link-btn">

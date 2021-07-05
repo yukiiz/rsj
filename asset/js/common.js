@@ -204,6 +204,9 @@ $(function () {
 	function onPlayerReady(event) {
 		event.target.mute();
 	    event.target.playVideo();
+	    var timer = setTimeout(function(){
+	    	$('.mv-loader').fadeOut();
+	    }, 1000);
 	}
 	function onPlayerStateChange(event) {
 		if (event.data == YT.PlayerState.ENDED) {
@@ -211,7 +214,7 @@ $(function () {
 		}
 	}
 	function onPlayerError() {
-		$('.mv-movie').fadeOut();
+		$('.mv-movie, .mv-loader').fadeOut();
 	}
 	window.onYouTubePlayerAPIReady = function() {
 	    onYouTubeIframeAPIReady();

@@ -28,6 +28,9 @@ Template Name: トップページ
 			        <div id="js-mv-player"></div>
 			    </div>
 			</div>
+			<div class="mv-loader">
+			    <div class="mv-loader-icon"></div>
+			</div>
 		</section>
 		<section class="sec-banner banner">
 			<div class="banner-list js-link-btn">

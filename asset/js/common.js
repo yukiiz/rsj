@@ -3,6 +3,8 @@ ua.name = window.navigator.userAgent.toLowerCase();
 ua.isiPhone = ua.name.indexOf("iphone") >= 0;
 ua.isAndroid = ua.name.indexOf("android") >= 0;
 ua.isTouch = "ontouchstart" in window;
+
+var slider;
 $(function () {
 	var allH = $(".content-wrap").height();
 	var footerH = $(".footer").height();
@@ -95,7 +97,7 @@ $(function () {
 	/*-----------------------------------------------------------------*/
 	//スライダー設定
 
-	$(".slider").slick({
+	slider = $(".slider").slick({
 		autoplay: true,
 		infinite: true,
 		// autoplaySpeed:5000,
@@ -213,6 +215,7 @@ $(function () {
 		}
 		function onPlayerStateChange(event) {
 			if (event.data == YT.PlayerState.ENDED) {
+				slider.slick('slickGoTo', 0, true);
 				$('.mv-movie').fadeOut();
 			}
 		}

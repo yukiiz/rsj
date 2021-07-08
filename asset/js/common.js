@@ -181,44 +181,49 @@ $(function () {
 
 	/*-----------------------------------------------------------------*/
 	// MV動画
-	loadScript();
-	var ytPlayer;
-	function onYouTubeIframeAPIReady() {
-	    ytPlayer = new YT.Player('js-mv-player', {
-	        height: '360',
-	        width: '640',
-			videoId: '6RLG82XWXqw',
-	        events: {
-	            'onReady': onPlayerReady,
-	        	'onStateChange': onPlayerStateChange,
-	        	'onError': onPlayerError
-	        },
-	        playerVars:{
-	            autoplay: 1,
-	            controls: 0,
-	            rel: 0,
-	            disablekb: 0,
-	        },
-	    });
-	}
-	function onPlayerReady(event) {
-		event.target.mute();
-	    event.target.playVideo();
-	    var timer = setTimeout(function(){
-	    	$('.mv-loader').fadeOut();
-	    }, 1000);
-	}
-	function onPlayerStateChange(event) {
-		if (event.data == YT.PlayerState.ENDED) {
-			$('.mv-movie').fadeOut();
+	if(ua.isiPhone || ua.isAndroid){//SPの場合
+		$('.mv-movie, .mv-loader').remove();
+	} else {
+		loadScript();
+		var ytPlayer;
+		function onYouTubeIframeAPIReady() {
+		    ytPlayer = new YT.Player('js-mv-player', {
+		        height: '360',
+		        width: '640',
+				videoId: '6RLG82XWXqw',
+		        events: {
+		            'onReady': onPlayerReady,
+		        	'onStateChange': onPlayerStateChange,
+		        	'onError': onPlayerError
+		        },
+		        playerVars:{
+		            autoplay: 1,
+		            controls: 0,
+		            rel: 0,
+		            disablekb: 0,
+		        },
+		    });
 		}
+		function onPlayerReady(event) {
+			event.target.mute();
+		    event.target.playVideo();
+		    var timer = setTimeout(function(){
+		    	$('.mv-loader').fadeOut();
+		    }, 1000);
+		}
+		function onPlayerStateChange(event) {
+			if (event.data == YT.PlayerState.ENDED) {
+				$('.mv-movie').fadeOut();
+			}
+		}
+		function onPlayerError() {
+			$('.mv-movie, .mv-loader').fadeOut();
+		}
+		window.onYouTubePlayerAPIReady = function() {
+		    onYouTubeIframeAPIReady();
+		};
 	}
-	function onPlayerError() {
-		$('.mv-movie, .mv-loader').fadeOut();
-	}
-	window.onYouTubePlayerAPIReady = function() {
-	    onYouTubeIframeAPIReady();
-	};
+
 });
 
 function loadScript() {

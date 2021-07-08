@@ -104,9 +104,8 @@
 					border-radius: 50%;
 					width: 6em;
 					height: 6em;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
+					top: calc(50% - 3em);
+					left: calc(50% - 3em);
 					&:after{
 						border-radius: 50%;
 						width: 6em;

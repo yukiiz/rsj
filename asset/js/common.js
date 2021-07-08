@@ -100,13 +100,12 @@ $(function () {
 	slider = $(".slider").slick({
 		autoplay: true,
 		infinite: true,
-		// autoplaySpeed:5000,
 		dots: true, //ドットのナビゲーションを表示
 		arrows: true,
 		slidesToShow: 1, //表示するスライドの数
 		slidesToScroll: 1, //スクロールで切り替わるスライドの数
-		//centerMode: true, //要素を中央寄せ
-		//centerPadding: "8%", //両サイドの見えている部分のサイズ
+		pauseOnFocus: false,
+		pauseOnHover: false,
 		responsive: [
 			{
 				breakpoint: 1023, // 600〜1023px
@@ -183,60 +182,57 @@ $(function () {
 
 	/*-----------------------------------------------------------------*/
 	// MV動画
-	if(ua.isiPhone || ua.isAndroid){//SPの場合
-		$('.mv-movie, .mv-loader').remove();
+	if (ua.isiPhone || ua.isAndroid) {
+		//SPの場合
+		$(".mv-movie, .mv-loader").remove();
 	} else {
 		loadScript();
 		var ytPlayer;
 		function onYouTubeIframeAPIReady() {
-		    ytPlayer = new YT.Player('js-mv-player', {
-		        height: '360',
-		        width: '640',
-				videoId: '6RLG82XWXqw',
-		        events: {
-		            'onReady': onPlayerReady,
-		        	'onStateChange': onPlayerStateChange,
-		        	'onError': onPlayerError
-		        },
-		        playerVars:{
-		            autoplay: 1,
-		            controls: 0,
-		            rel: 0,
-		            disablekb: 0,
-		        },
-		    });
+			ytPlayer = new YT.Player("js-mv-player", {
+				height: "360",
+				width: "640",
+				videoId: "6RLG82XWXqw",
+				events: {
+					onReady: onPlayerReady,
+					onStateChange: onPlayerStateChange,
+					onError: onPlayerError,
+				},
+				playerVars: {
+					autoplay: 1,
+					controls: 0,
+					rel: 0,
+					disablekb: 0,
+				},
+			});
 		}
 		function onPlayerReady(event) {
 			event.target.mute();
-		    event.target.playVideo();
-		    var timer = setTimeout(function(){
-		    	$('.mv-loader').fadeOut();
-		    }, 1000);
+			event.target.playVideo();
+			var timer = setTimeout(function () {
+				$(".mv-loader").fadeOut();
+			}, 1000);
 		}
 		function onPlayerStateChange(event) {
 			if (event.data == YT.PlayerState.ENDED) {
-				slider.slick('slickGoTo', 0, true);
-				$('.mv-movie').fadeOut();
+				slider.slick("slickGoTo", 0, true);
+				$(".mv-movie").fadeOut();
 			}
 		}
 		function onPlayerError() {
-			$('.mv-movie, .mv-loader').fadeOut();
+			$(".mv-movie, .mv-loader").fadeOut();
 		}
-		window.onYouTubePlayerAPIReady = function() {
-		    onYouTubeIframeAPIReady();
+		window.onYouTubePlayerAPIReady = function () {
+			onYouTubeIframeAPIReady();
 		};
 	}
-
 });
 
 function loadScript() {
-	if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
-		var tag = document.createElement('script');
+	if (typeof YT == "undefined" || typeof YT.Player == "undefined") {
+		var tag = document.createElement("script");
 		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
+		var firstScriptTag = document.getElementsByTagName("script")[0];
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 	}
 }
-
-
-

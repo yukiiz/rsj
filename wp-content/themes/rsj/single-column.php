@@ -42,6 +42,7 @@
 						<?php while (have_posts()) : the_post(); //繰り返し処理開始
         ?>
 						<div class="sec-headline headline">
+							<p class="news-date en color"><?php the_time('Y.m.d');?></p>
 							<h1 class="headline-tit bold"><span class="headline-tit_1"><?php the_title(); ?></span></h1>
 						</div>
 
@@ -53,9 +54,6 @@
 			$img_src = wp_get_attachment_image_src( $img, $size);?>
 								<img src="<?php echo $img_src[0]; ?>">
 							</div>
-							<!--
-					<p class="news-date en color"><?php the_time('Y.m.d');?></p>
-					-->
 							<div class="news-body">
 								<?php remove_filter('the_content', 'wpautop'); ?>
 								<?php the_content();?>
@@ -76,20 +74,20 @@
 								<?php if ($prev_post) : // 前の投稿があれば表示
                             ?>
 								<a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-link">
-									<span>前の記事を見る</span>
+									<span>前の記事</span>
 								</a>
 								<?php endif; ?>
 							</li>
+							<li class="paging-item paging-item_archive text-center"><a href="/column/">一覧に戻る</a></li>
 							<li class="paging-item paging-item_next text-center">
 								<?php if ($next_post) : // 次の投稿があれば表示
                             ?>
 								<a href="<?php echo get_permalink($next_post->ID); ?>" class="next-link">
-									<span>次の記事を見る</span>
+									<span>次の記事</span>
 								</a>
 								<?php endif; ?>
 							</li>
 						</ul>
-						<div class="paging-item_archive"><a href="/column/">一覧に戻る</a></div>
 					</div>
 				</section>
 				<?php endif; ?>
@@ -117,7 +115,7 @@
 			</aside>
 		</div>
 	</div>
-	<!-- =====link===== -->
+	<!-- =====link=====
 	<section class="sec-link link">
 		<div class="sec-inner">
 			<ul class="two-columns">
@@ -135,7 +133,7 @@
 				</li>
 			</ul>
 		</div>
-	</section>
+	</section> -->
 </main>
 
 <?php get_footer(2);

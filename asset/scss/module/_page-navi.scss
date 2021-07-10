@@ -2,28 +2,71 @@
 	.paging {
 		&-list {
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			margin: 0 auto 80px;
 			width: 100%;
 		}
 		&-item {
+			width: 33%;
 			a {
-				border: 1px solid $fc;
-				border-radius: 50px;
 				color: $fc;
 				display: block;
 				padding: 10px;
 				transition: all 0.3s;
-				width: 160px;
-				@include maxsp {
-					width: 150px;
-				}
-				&:hover {
-					background: $fc;
-					color: white;
-				}
+				//width: 160px;
+				text-align: center;
 			}
 			&_prev {
+				a {
+					position: relative;
+					&::before {
+						font-family: "Font Awesome 5 Free";
+						font-weight: 900;
+						content: "\f061";
+						position: absolute;
+						left: 2.5em;
+						top: 50%;
+						transition: all 0.2s;
+						transform: translatey(-50%) rotate(178deg);
+						@include maxsp {
+							left: 0;
+						}
+					}
+					&:hover {
+						color: $sc;
+						&::before {
+							color: $sc;
+							left: 2.2em;
+						}
+					}
+				}
+			}
+			&_next {
+				a {
+					color: $fc;
+					display: block;
+					position: relative;
+					&::after {
+						font-family: "Font Awesome 5 Free";
+						font-weight: 900;
+						content: "\f061";
+						position: absolute;
+						right: 2.5em;
+						top: 50%;
+						transition: all 0.2s;
+						transform: translatey(-50%);
+						@include maxsp {
+							right: 0;
+						}
+					}
+					&:hover {
+						color: $sc;
+						&::after {
+							color: $sc;
+							right: 2.2em;
+						}
+					}
+				}
 			}
 			&_archive {
 				margin-bottom: 100px;
@@ -31,20 +74,6 @@
 					color: $fc;
 					display: block;
 					position: relative;
-					text-align: right;
-					@include maxsp {
-						margin-right: 25px;
-					}
-					&::after {
-						font-family: "Font Awesome 5 Free";
-						font-weight: 900;
-						content: "\f061";
-						position: absolute;
-						right: -1.2em;
-						top: 50%;
-						transition: all 0.2s;
-						transform: translatey(-50%);
-					}
 					&:hover {
 						color: $sc;
 						&::after {

@@ -57,7 +57,7 @@
 				left: 0;
 				overflow: hidden;
 				pointer-events: none;
-				&-inner{
+				&-inner {
 					width: 177vh;
 					height: 100vh;
 					position: absolute;
@@ -68,22 +68,22 @@
 					@include maxtb {
 						height: 600px;
 					}
-					@media (min-aspect-ratio: 16/9){
+					@media (min-aspect-ratio: 16/9) {
 						width: 100vw;
 						height: 56.25vw;
 					}
-					iframe{
-					    width: 100%;
-					    height: 100%;
-					    position: absolute;
-					    top: 0;
-					    left: 0;
-					    object-fit: cover;
-					    object-position: center;
+					iframe {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						object-fit: cover;
+						object-position: center;
 					}
 				}
 			}
-			&-loader{
+			&-loader {
 				width: 100vw;
 				height: 100vh;
 				background: #fff;
@@ -91,13 +91,13 @@
 				top: 0;
 				left: 0;
 				z-index: 1000;
-				&-icon{
+				&-icon {
 					font-size: 10px;
 					position: relative;
 					text-indent: -9999em;
-					border-top: 0.5em solid rgba(255,122,74, 0.2);
-					border-right: 0.5em solid rgba(255,122,74, 0.2);
-					border-bottom: 0.5em solid rgba(255,122,74, 0.2);
+					border-top: 0.5em solid rgba(255, 122, 74, 0.2);
+					border-right: 0.5em solid rgba(255, 122, 74, 0.2);
+					border-bottom: 0.5em solid rgba(255, 122, 74, 0.2);
 					border-left: 0.5em solid #ff7a4a;
 					transform: translateZ(0);
 					animation: loader_icon 1.1s infinite linear;
@@ -106,7 +106,7 @@
 					height: 6em;
 					top: calc(50% - 3em);
 					left: calc(50% - 3em);
-					&:after{
+					&:after {
 						border-radius: 50%;
 						width: 6em;
 						height: 6em;
@@ -569,22 +569,22 @@
 }
 
 @-webkit-keyframes loader_icon {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }
 @keyframes loader_icon {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }

@@ -2012,9 +2012,27 @@ button {
   margin: 0 auto 35px;
 }
 
+.voice-page .cards .card-tit {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 85px;
+}
+
 @media screen and (max-width: 767px) {
   .voice-page .cards .card-tit {
     padding: 5px;
+    height: 70px;
   }
 }
 
@@ -2739,27 +2757,24 @@ strong {
 }
 
 .top-page .sec-column .three-columns {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 140px;
+  /*
+			.three-columns-box {
+				margin: 0 20px;
+				@include maxsp {
+					margin: 0 5px;
+				}
+			}*/
 }
 
 @media screen and (max-width: 767px) {
   .top-page .sec-column .three-columns {
     margin: 55px auto 20px;
     width: 100%;
-  }
-}
-
-.top-page .sec-column .three-columns .three-columns-box {
-  margin: 0 20px;
-}
-
-@media screen and (max-width: 767px) {
-  .top-page .sec-column .three-columns .three-columns-box {
-    margin: 0 5px;
   }
 }
 

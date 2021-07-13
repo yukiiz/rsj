@@ -206,18 +206,19 @@
 	}
 	.sec-column {
 		.three-columns {
-			justify-content: center;
+			justify-content: space-between;
 			margin-bottom: 140px;
 			@include maxsp {
 				margin: 55px auto 20px;
 				width: 100%;
 			}
+			/*
 			.three-columns-box {
 				margin: 0 20px;
 				@include maxsp {
 					margin: 0 5px;
 				}
-			}
+			}*/
 		}
 		.box-img {
 			@include maxsp {

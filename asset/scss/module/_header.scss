@@ -27,12 +27,15 @@
 		width: calc(100vw - 70px);
 		&_img {
 			position: relative;
-			width: 4em;
+			width: 8em;
 			@include minpc {
 				display: none;
 			}
 			@include maxtb {
 				width: 8em;
+				img {
+					width: 100%;
+				}
 			}
 			img {
 				left: 20px;
@@ -336,7 +339,8 @@
 	.header-logo_img {
 		display: block;
 		img {
-			top: calc(50% + 45px);
+			top: calc(50% + 42px);
+			width: 100%;
 		}
 	}
 	@media screen and (max-width: 1500px) {

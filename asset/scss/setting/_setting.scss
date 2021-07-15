@@ -7,27 +7,14 @@
 $resetCSS: 0;
 
 // フォント
-@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
-@import url("https://fonts.googleapis.com/css2？family = Montserrat：wght @ 900＆ display = swap");
-@font-face {
-	font-family: "Noto Sans CJK JP";
-	font-style: normal;
-	font-weight: 100;
-	src: local("Noto Sans CJK JP Light"), local("NotoSansCJKjp-Light"), local("NotoSansJP-Light"), url("/fonts/NotoSansCJKjp-Light.woff2") format("woff2"), url("/fonts/NotoSansCJKjp-Light.woff") format("woff");
-}
-@font-face {
-	font-family: "Noto Sans CJK JP";
-	font-style: normal;
-	font-weight: 400;
-	src: local("Noto Sans CJK JP Regular"), local("NotoSansCJKjp-Regular"), local("NotoSansJP-Regular"), url("/fonts/NotoSansCJKjp-Regular.woff2") format("woff2"), url("/fonts/NotoSansCJKjp-Regular.woff") format("woff");
-}
+
 .br::before {
 	content: "\A";
 	white-space: pre;
 	font-family: "serif";
 }
 
-$base_font: "Noto Sans CJK JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
+$base_font: "Noto Sans JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
 
 //サブカラー
 $sc: #ff7a4a;

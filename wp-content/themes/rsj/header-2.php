@@ -39,7 +39,7 @@
 					<ul class="header-logo">
 						<li <?php if(is_home()): ?>class="header-logo_img pc-none" <?php else : ?>class="header-logo_img" <?php endif; ?>>
 							<a href="/">
-								<img src="/asset/img/header-logo.png" alt="" />
+								<img src="/asset/img/top/logo.svg" alt="" />
 							</a>
 						</li>
 						<li class="header-logo_btn pc-none">

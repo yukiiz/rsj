@@ -80,7 +80,7 @@
 				<ul class="archives-list">
 					<?php
     $string = wp_get_archives(array(
-      'post_type'     => 'column',
+      'post_type'     => 'news',
       'show_post_count' => 1,
       'echo' => 0
     ));

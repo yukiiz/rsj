@@ -1,20 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
-@import url("https://fonts.googleapis.com/css2？family = Montserrat：wght @ 900＆ display = swap");
-@font-face {
-  font-family: "Noto Sans CJK JP";
-  font-style: normal;
-  font-weight: 100;
-  src: local("Noto Sans CJK JP Light"), local("NotoSansCJKjp-Light"), local("NotoSansJP-Light"), url("/fonts/NotoSansCJKjp-Light.woff2") format("woff2"), url("/fonts/NotoSansCJKjp-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Noto Sans CJK JP";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Noto Sans CJK JP Regular"), local("NotoSansCJKjp-Regular"), local("NotoSansJP-Regular"), url("/fonts/NotoSansCJKjp-Regular.woff2") format("woff2"), url("/fonts/NotoSansCJKjp-Regular.woff") format("woff");
-}
-
 .br::before {
   content: "\A";
   white-space: pre;
@@ -111,7 +95,7 @@ video {
 /*=====全体の設定=====*/
 body {
   -webkit-text-size-adjust: 100%;
-  font-family: "Noto Sans CJK JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
+  font-family: "Noto Sans JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
   font-weight: 500;
   color: #19293e;
   line-height: 1.5;
@@ -121,7 +105,7 @@ body {
 
 @media all and (-ms-high-contrast: none) {
   body {
-    font-family: "Noto Sans CJK JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
+    font-family: "Noto Sans JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
   }
 }
 
@@ -244,7 +228,7 @@ input,
 select {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Noto Sans CJK JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
+  font-family: "Noto Sans JP", メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック", "Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
   -webkit-appearance: none;
 }
 
@@ -468,7 +452,7 @@ button {
 
 .header-logo_img {
   position: relative;
-  width: 4em;
+  width: 8em;
 }
 
 @media screen and (min-width: 960px) {
@@ -480,6 +464,9 @@ button {
 @media screen and (max-width: 959px) {
   .header-logo_img {
     width: 8em;
+  }
+  .header-logo_img img {
+    width: 100%;
   }
 }
 
@@ -866,7 +853,8 @@ button {
 }
 
 .layer-header .header-logo_img img {
-  top: calc(50% + 45px);
+  top: calc(50% + 42px);
+  width: 100%;
 }
 
 @media screen and (max-width: 1500px) {

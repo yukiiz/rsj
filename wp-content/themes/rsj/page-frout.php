@@ -19,17 +19,17 @@ Template Name: トップページ
 				</div>-->
 				<div class="mv-left logo">
 					<div class="logo-inner">
-						<img class="center" src="/asset/img/logo_01.png" alt="" />
+						<img class="center" src="/asset/img/top/logo.svg" alt="" />
 					</div>
 				</div>
 			</div>
 			<div class="mv-movie">
-			    <div class="mv-movie-inner">
-			        <div id="js-mv-player"></div>
-			    </div>
+				<div class="mv-movie-inner">
+					<div id="js-mv-player"></div>
+				</div>
 			</div>
 			<div class="mv-loader">
-			    <div class="mv-loader-icon"></div>
+				<div class="mv-loader-icon"></div>
 			</div>
 		</section>
 		<section class="sec-banner banner">

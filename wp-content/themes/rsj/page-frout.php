@@ -24,13 +24,13 @@ Template Name: トップページ
 				</div>
 			</div>
 			<div class="mv-movie">
-				<div class="mv-movie-inner">
-					<div id="js-mv-player"></div>
-				</div>
+			    <div class="mv-movie-inner">
+			        <video src="/asset/img/top/mv.mp4" id="player" autoplay muted webkit-playsinline playsinline></video>
+			    </div>
 			</div>
-			<div class="mv-loader">
-				<div class="mv-loader-icon"></div>
-			</div>
+			<!-- <div class="mv-loader">
+			    <div class="mv-loader-icon"></div>
+			</div> -->
 		</section>
 		<section class="sec-banner banner">
 			<div class="banner-list js-link-btn">

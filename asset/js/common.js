@@ -182,15 +182,21 @@ $(function () {
 
 	/*-----------------------------------------------------------------*/
 	// MV動画
-	var player = $('#player').get(0);
-	if (ua.isiPhone || ua.isAndroid) {
-		//SPの場合
+	var is_watched = sessionStorage.getItem('movie-watched');
+	if(is_watched){ //すでに動画を見た場合
 		$(".mv-movie, .mv-loader").remove();
-	} else {
-		player.addEventListener('ended',function() {
-			$('.mv-movie').fadeOut();
-			slider.slick("slickGoTo", 0, true);
-		});
+	} else{//初回再生の場合
+		var player = $('#player').get(0);
+		if (ua.isiPhone || ua.isAndroid) {
+			//SPの場合
+			$(".mv-movie, .mv-loader").remove();
+		} else {
+			player.addEventListener('ended',function() {
+				$('.mv-movie').fadeOut();
+				slider.slick("slickGoTo", 0, true);
+				sessionStorage.setItem('movie-watched', true);
+			});
+		}
 	}
 });
 

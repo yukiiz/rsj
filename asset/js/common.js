@@ -182,22 +182,53 @@ $(function () {
 
 	/*-----------------------------------------------------------------*/
 	// MV動画
-	var is_watched = sessionStorage.getItem('movie-watched');
-	if(is_watched){ //すでに動画を見た場合
+	var is_watched = sessionStorage.getItem("movie-watched");
+	if (is_watched) {
+		//すでに動画を見た場合
 		$(".mv-movie, .mv-loader").remove();
-	} else{//初回再生の場合
-		var player = $('#player').get(0);
+	} else {
+		//初回再生の場合
+		var player = $("#player").get(0);
 		if (ua.isiPhone || ua.isAndroid) {
 			//SPの場合
 			$(".mv-movie, .mv-loader").remove();
 		} else {
-			player.addEventListener('ended',function() {
-				$('.mv-movie').fadeOut();
+			player.addEventListener("ended", function () {
+				$(".mv-movie").fadeOut();
 				slider.slick("slickGoTo", 0, true);
-				sessionStorage.setItem('movie-watched', true);
+				sessionStorage.setItem("movie-watched", true);
 			});
 		}
 	}
 });
 
+/*-----------------------------------------------------------------*/
+// アンカーリンクずれ修正
+/*
+jQuery(function () {
+	var windowWidth = $(window).width();
+	var windowSm = 897; // スマホに切り替わる横幅
+	if (windowWidth <= windowSm) {
+		var headerHight = 90; // スマホのヘッダー等の高さ分の数値を入れる
+	} else {
+		var headerHight = 90; // PC のヘッダー等の高さ分の数値を入れる
+	}
+	jQuery('a[href^="#"]').click(function () {
+		var speed = 1000;
+		var href = jQuery(this).attr("href");
+		var target = jQuery(href == "#" || href == "" ? "html" : href);
+		var position = target.offset().top - headerHight;
+		jQuery("body,html").animate({ scrollTop: position }, speed, "swing");
+		return false;
+	});
+});*/
 
+$('a[href^="#"]').click(function () {
+	var speed = 800;
+	var adjust = $(".header").height();
+	var href = $(this).attr("href");
+	var target = $(href == "#" || href == "" ? "html" : href);
+	var position = target.offset().top - adjust;
+	$("body,html").animate({ scrollTop: position }, speed, "swing");
+	return false;
+});

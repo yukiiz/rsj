@@ -38,9 +38,12 @@
 				<section class="sec-news news">
 					<div class="sec-inner">
 						<ul class="tnews-list news">
-							<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                            $my_query = new WP_Query(
-                                array('paged' => $paged, 'posts_per_page' => 8, 'post_type' => 'news')
+							<?php
+								$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+								$year = get_query_var('year');
+								$monthnum = get_query_var('monthnum');
+								$my_query = new WP_Query(
+									array('year' => $year, 'monthnum' => $monthnum, 'paged' => $paged, 'posts_per_page' => 8, 'post_type' => 'news')
                             );
                             ?>
 							<?php if ($my_query->have_posts()) :

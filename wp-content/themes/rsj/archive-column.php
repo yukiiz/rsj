@@ -37,9 +37,12 @@
 				<section class="sec-news news">
 					<div class="sec-inner">
 						<ul class="three-columns">
-							<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                            $my_query = new WP_Query(
-                                array('paged' => $paged, 'posts_per_page' => 9, 'post_type' => 'column')
+							<?php
+							$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+							$year = get_query_var('year');
+							$monthnum = get_query_var('monthnum');
+							$my_query = new WP_Query(
+							array('year' => $year, 'monthnum' => $monthnum, 'paged' => $paged, 'posts_per_page' => 9, 'post_type' => 'column')
                             );
                             ?>
 							<?php if ($my_query->have_posts()) :
@@ -51,7 +54,6 @@
 										<?php $img = wp_get_attachment_image_src($img, 'large'); ?>
 										<img src="<?php echo $img[0]; ?>"></a>
 								</div>
-
 								<p>
 										<span class="box-date"><?php the_time('Y.m.d');?></span>
 										<!--
